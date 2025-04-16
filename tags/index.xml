@@ -2,10 +2,10 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Tags on Jota Ochoa</title>
-    <link>/tags/</link>
+    <link>https://jotaochoa07.github.io/jota-webpage/tags/</link>
     <description>Recent content in Tags on Jota Ochoa</description>
     <generator>Hugo</generator>
     <language>es-co</language>
-    <atom:link href="/tags/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://jotaochoa07.github.io/jota-webpage/tags/index.xml" rel="self" type="application/rss+xml" />
   </channel>
 </rss>
