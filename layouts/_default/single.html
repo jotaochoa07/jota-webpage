@@ -1,7 +1,11 @@
 {{ define "main" }}
 <div class="single-container">
-  {{ with .Params.image }}
+  {{ with .Params.featured }}
     <img src="{{ . | relURL }}" alt="Imagen destacada" class="single-featured">
+  {{ else }}
+    {{ with .Params.image }}
+      <img src="{{ . | relURL }}" alt="Imagen destacada" class="single-featured">
+    {{ end }}
   {{ end }}
 
   <h1 class="single-title">{{ .Title }}</h1>
