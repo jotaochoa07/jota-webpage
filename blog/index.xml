@@ -2,24 +2,24 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Blogs on Jota Ochoa</title>
-    <link>https://jotaochoa07.github.io/jota-webpage/blog/</link>
+    <link>https://news.jotagrowthpartner.com/blog/</link>
     <description>Recent content in Blogs on Jota Ochoa</description>
     <generator>Hugo</generator>
     <language>es-co</language>
     <lastBuildDate>Tue, 15 Apr 2025 00:00:00 +0000</lastBuildDate>
-    <atom:link href="https://jotaochoa07.github.io/jota-webpage/blog/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://news.jotagrowthpartner.com/blog/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Bienvenida a mi sitio</title>
-      <link>https://jotaochoa07.github.io/jota-webpage/blog/bienvenida-a-mi-sitio/</link>
+      <link>https://news.jotagrowthpartner.com/blog/bienvenida-a-mi-sitio/</link>
       <pubDate>Tue, 15 Apr 2025 00:00:00 +0000</pubDate>
-      <guid>https://jotaochoa07.github.io/jota-webpage/blog/bienvenida-a-mi-sitio/</guid>
+      <guid>https://news.jotagrowthpartner.com/blog/bienvenida-a-mi-sitio/</guid>
       <description>Este es el primer contenido de prueba. Aquí irá mi blog, mis podcasts y más.</description>
     </item>
     <item>
       <title>La opinión como resistencia</title>
-      <link>https://jotaochoa07.github.io/jota-webpage/blog/la-opini%C3%B3n-como-resistencia/</link>
+      <link>https://news.jotagrowthpartner.com/blog/la-opini%C3%B3n-como-resistencia/</link>
       <pubDate>Tue, 15 Apr 2025 00:00:00 +0000</pubDate>
-      <guid>https://jotaochoa07.github.io/jota-webpage/blog/la-opini%C3%B3n-como-resistencia/</guid>
+      <guid>https://news.jotagrowthpartner.com/blog/la-opini%C3%B3n-como-resistencia/</guid>
       <description>Una columna sin filtro.</description>
     </item>
   </channel>
