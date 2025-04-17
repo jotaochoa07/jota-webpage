@@ -5,6 +5,7 @@ theme = "custom-theme"
 enableRobotsTXT = true
 canonifyURLs = true
 
+
 [permalinks]
   blog = "/blog/:slug/"
   literatura = "/literatura/:slug/"
