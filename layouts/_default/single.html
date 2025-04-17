@@ -1,0 +1,115 @@
+{{ define "main" }}
+
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+<style>
+  body {
+    background-color: #1A1C1D;
+    color: white;
+    font-family: 'Montserrat', sans-serif;
+    margin: 0;
+    padding: 0;
+  }
+
+  .single-container {
+    max-width: 800px;
+    margin: 40px auto;
+    padding: 0 20px;
+  }
+
+  .single-featured {
+    width: 100%;
+    max-height: 400px;
+    object-fit: cover;
+    border-radius: 12px;
+    margin-bottom: 30px;
+  }
+
+  .single-title {
+    color: #F5A623;
+    font-size: 30px;
+    margin-bottom: 10px;
+  }
+
+  .single-content p {
+    font-size: 16px;
+    line-height: 1.6;
+    color: #ddd;
+  }
+
+  .single-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 50px;
+    border-top: 1px solid #333;
+    padding-top: 30px;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+
+  .single-footer a,
+  .share-buttons button {
+    color: #F5A623;
+    font-size: 14px;
+    text-decoration: none;
+    border: none;
+    background: none;
+    cursor: pointer;
+    transition: color 0.3s ease;
+  }
+
+  .single-footer a:hover,
+  .share-buttons button:hover {
+    color: white;
+  }
+
+  .share-buttons {
+    display: flex;
+    gap: 15px;
+  }
+
+  .share-buttons i {
+    font-size: 16px;
+  }
+</style>
+
+<div class="single-container">
+  {{ with .Params.featured }}
+    <img src="{{ . }}" alt="Imagen destacada" class="single-featured">
+  {{ end }}
+
+  <h1 class="single-title">{{ .Title }}</h1>
+
+  <div class="single-content">
+    {{ .Content }}
+  </div>
+
+  <div class="single-footer">
+    <a href="/">← Volver al inicio</a>
+    <div class="share-buttons">
+      <button onclick="window.open('https://twitter.com/intent/tweet?text={{ .Title }}&url={{ .Permalink }}', '_blank')">
+        <i class="fab fa-twitter"></i>
+      </button>
+      <button onclick="window.open('https://api.whatsapp.com/send?text={{ .Title }} {{ .Permalink }}', '_blank')">
+        <i class="fab fa-whatsapp"></i>
+      </button>
+      <button onclick="window.open('https://www.linkedin.com/shareArticle?mini=true&url={{ .Permalink }}&title={{ .Title }}', '_blank')">
+        <i class="fab fa-linkedin"></i>
+      </button>
+      <button onclick="copiarLink()">
+        <i class="fas fa-link"></i>
+      </button>
+    </div>
+  </div>
+</div>
+
+<script>
+  function copiarLink() {
+    navigator.clipboard.writeText("{{ .Permalink }}");
+    alert("🔗 Enlace copiado al portapapeles");
+  }
+</script>
+
+{{ end }}

@@ -1,0 +1,17 @@
+{{ define "main" }}
+
+<div style="max-width: 1000px; margin: 40px auto; padding: 0 20px;">
+  <h1 style="color: #F5A623; text-align: center; font-size: 32px; margin-bottom: 40px;">{{ .Title }}</h1>
+
+  <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 25px;">
+    {{ range .Pages }}
+      <div style="background:#222; padding:25px; border-radius:15px; transition: transform 0.2s ease, box-shadow 0.2s ease;">
+        <h3 style="margin-top: 0; font-size: 20px; color: white;">{{ .Title }}</h3>
+        <p style="color: #ccc; font-size: 15px; margin-bottom: 12px;">{{ .Summary }}</p>
+        <a href="{{ .RelPermalink }}" style="color: #F5A623; text-decoration: none; font-weight: bold;">Leer más →</a>
+      </div>
+    {{ end }}
+  </div>
+</div>
+
+{{ end }}

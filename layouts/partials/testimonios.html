@@ -1,0 +1,87 @@
+<section style="margin-top: 80px; text-align: center;">
+    <h2 style="color: #F5A623; margin-bottom: 30px;">Testimonios</h2>
+  
+    <div style="position: relative; max-width: 1020px; margin: auto; overflow: hidden;">
+  
+      <!-- Carrusel -->
+      <div id="carrusel-testimonios" style="display: flex; transition: transform 0.5s ease;">
+        <div class="testimonio-card">
+          “Nos ahorramos un empleado y crecimos en un 30%.”
+          <br><br>
+          <strong>— Mark Baum.</strong><br>
+          <span class="subautor">Hotel Owner, Zen-Sual</span>
+        </div>
+        <div class="testimonio-card">
+          “Jota es brillante, creativo y estratégico.”
+          <br><br>
+          <strong>— Isabella F.</strong><br>
+          <span class="subautor">CMO, Estratek</span>
+        </div>
+        <div class="testimonio-card">
+          “Convirtió nuestro chat en una máquina de ventas.”
+          <br><br>
+          <strong>— Estephy Salas.</strong><br>
+          <span class="subautor">E-commerce Owner, Serendipity</span>
+        </div>
+        <div class="testimonio-card">
+          “Va un paso adelante de cualquier competencia.”
+          <br><br>
+          <strong>— Raúl Bejarano.</strong><br>
+          <span class="subautor">Docente</span>
+        </div>
+        <div class="testimonio-card">
+          “Se le nota la pasión cuando habla de IA y su impacto global.”
+          <br><br>
+          <strong>— Valentina D.</strong><br>
+          <span class="subautor">Productora Creativa</span>
+        </div>
+      </div>
+  
+      <!-- Flechas -->
+      <button onclick="moverCarrusel(-1)" style="position:absolute;left:10px;top:50%;transform:translateY(-50%);background:none;border:none;font-size:30px;color:#F5A623;cursor:pointer;z-index:1;">‹</button>
+      <button onclick="moverCarrusel(1)" style="position:absolute;right:10px;top:50%;transform:translateY(-50%);background:none;border:none;font-size:30px;color:#F5A623;cursor:pointer;z-index:1;">›</button>
+  
+    </div>
+  
+    <style>
+      .testimonio-card {
+        width: 300px;
+        margin: 0 10px;
+        background: #222;
+        padding: 20px;
+        border-radius: 15px;
+        color: #ccc;
+        flex: 0 0 auto;
+        box-sizing: border-box;
+        transition: all 0.3s ease;
+      }
+  
+      .subautor {
+        color: #888;
+        font-size: 13px;
+      }
+  
+      @media (max-width: 768px) {
+        .testimonio-card {
+          width: 90vw;
+        }
+      }
+    </style>
+  
+    <script>
+      let index = 0;
+      const mostrar = 3;
+  
+      function moverCarrusel(direccion) {
+        const carrusel = document.getElementById("carrusel-testimonios");
+        const card = carrusel.querySelector(".testimonio-card");
+        const cardWidth = card.offsetWidth + 20;
+        const totalCards = carrusel.children.length;
+        const maxIndex = Math.ceil(totalCards / mostrar) - 1;
+  
+        index = Math.min(Math.max(index + direccion, 0), maxIndex);
+        carrusel.style.transform = `translateX(-${index * cardWidth * mostrar}px)`;
+      }
+    </script>
+  </section>
+  

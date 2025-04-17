@@ -1,0 +1,90 @@
+<section style="margin-top: 50px;">
+    <h2 style="color: #F5A623; text-align:center;">Explora mi contenido</h2>
+  
+    <style>
+        /* 🌀 Animación al cargar */
+        @keyframes fadeInUp {
+          0% {
+            opacity: 0;
+            transform: translateY(30px);
+          }
+          100% {
+            opacity: 1;
+            transform: translateY(0);
+          }
+        }
+      
+        .secciones-grid {
+          display: grid;
+          grid-template-columns: 1fr;
+          gap: 20px;
+          max-width: 1000px;
+          margin: 30px auto 0 auto;
+          padding: 0 20px;
+        }
+      
+        @media (min-width: 768px) {
+          .secciones-grid {
+            grid-template-columns: repeat(3, 1fr);
+          }
+        }
+      
+        .secciones-grid a {
+          text-decoration: none;
+        }
+      
+        .secciones-grid a div {
+          background: #222;
+          padding: 25px 20px;
+          border-radius: 20px;
+          text-align: center;
+          transition: transform 0.3s ease, box-shadow 0.3s ease;
+          box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+      
+          /* ✨ Animación de entrada */
+          animation: fadeInUp 0.8s ease both;
+        }
+      
+        .secciones-grid a div:hover {
+          transform: translateY(-10px);
+          box-shadow: 0 20px 30px rgba(245, 166, 35, 0.3);
+        }
+      
+        .secciones-grid h3 {
+          color: white;
+          margin-bottom: 10px;
+        }
+      
+        .secciones-grid p {
+          color: #ccc;
+          font-size: 14px;
+        }
+      </style>
+        
+        <div class="secciones-grid">
+
+            <a href="/blog/">
+              <div style="animation-delay: 0s;">
+                <h3>📝 Blog</h3>
+                <p>Ideas, estrategias y reflexiones sobre marketing, IA y más.</p>
+              </div>
+            </a>
+          
+            <a href="/podcast/">
+                <div style="animation-delay: 0.3s;">
+                  <h3>🎙️ Podcast</h3>
+                  <p>Felices 24: Conversaciones con gente inspiradora</p>
+                </div>
+              </a>
+
+            <a href="/literatura/">
+              <div style="animation-delay: 0.15s;">
+                <h3>📚 Literatura</h3>
+                <p>Cuentos, poesía y textos creativos de mi autoría.</p>
+              </div>
+            </a>
+          
+          </div>
+          
+  </section>
+  

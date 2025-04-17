@@ -1,0 +1,56 @@
+baseURL = "https://news.jotagrowthpartner.com/"
+languageCode = "es-co"
+title = "Jota Ochoa"
+theme = "custom-theme"
+enableRobotsTXT = true
+canonifyURLs = true
+
+[permalinks]
+  blog = "/blog/:slug/"
+  literatura = "/literatura/:slug/"
+  podcast = "/podcast/:slug/"
+
+[pagination]
+  pagerSize = 10
+
+[params]
+  author = "Jota Ochoa"
+  description = "Portafolio personal de Jota Ochoa"
+  mainSections = ["blog", "literatura", "podcast"]
+
+[markup.goldmark.renderer]
+  unsafe = true
+
+[menu]
+  [[menu.main]]
+    name = "Blog"
+    url = "/blog/"
+    weight = 1
+    identifier = "blog"
+
+    [[menu.main]]
+    name = "El Opinista"
+    url = "/blog/el-opinista/"
+    weight = 1
+    parent = "blog"
+
+    [[menu.main]]
+    name = "Marketing and AI"
+    url = "/blog/marketing-ai/"
+    weight = 2
+    parent = "blog"
+
+  [[menu.main]]
+    name = "Literatura"
+    url = "/literatura/"
+    weight = 2
+
+  [[menu.main]]
+    name = "Podcast"
+    url = "/podcast/"
+    weight = 3
+
+  [[menu.main]]
+    name = "Contacto"
+    url = "#contacto"
+    weight = 4
