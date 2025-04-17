@@ -1,38 +1,62 @@
 {{ define "main" }}
-<div class="single-container">
-  {{ with .Params.image }}
-    <img src="{{ . | relURL }}" alt="Imagen destacada" class="single-featured">
+<article class="post">
+  <header class="post-header">
+    <h1 class="post-title">{{ .Title }}</h1>
+    {{ if .Params.date }}
+    <time class="post-date" datetime="{{ .Date.Format "2006-01-02" }}">
+      {{ .Date.Format "2 January 2006" }}
+    </time>
+    {{ end }}
+  </header>
+
+  {{ if .Params.image }}
+  <div class="post-image">
+    <img src="{{ .Params.image | relURL }}" alt="{{ .Title }}" />
+  </div>
   {{ end }}
 
-  <h1 class="single-title">{{ .Title }}</h1>
-
-  <div class="single-content">
+  <div class="post-content">
     {{ .Content }}
   </div>
 
-  <div class="single-footer">
-    <a href="{{ "/" | relURL }}">← Volver al inicio</a>
-    <div class="share-buttons">
-      <button onclick="window.open('https://twitter.com/intent/tweet?text={{ .Title }}&url={{ .Permalink }}', '_blank')">
-        <i class="fab fa-twitter"></i>
-      </button>
-      <button onclick="window.open('https://api.whatsapp.com/send?text={{ .Title }} {{ .Permalink }}', '_blank')">
-        <i class="fab fa-whatsapp"></i>
-      </button>
-      <button onclick="window.open('https://www.linkedin.com/shareArticle?mini=true&url={{ .Permalink }}&title={{ .Title }}', '_blank')">
-        <i class="fab fa-linkedin"></i>
-      </button>
-      <button onclick="copiarLink()">
-        <i class="fas fa-link"></i>
-      </button>
-    </div>
-  </div>
-</div>
+  {{ partial "share-buttons.html" . }}
+</article>
 
-<script>
-  function copiarLink() {
-    navigator.clipboard.writeText("{{ .Permalink }}");
-    alert("🔗 Enlace copiado al portapapeles");
+<style>
+  .post {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 2rem;
   }
-</script>
+  .post-header {
+    margin-bottom: 2rem;
+  }
+  .post-title {
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
+  }
+  .post-date {
+    color: #888;
+    font-size: 0.9rem;
+  }
+  .post-image {
+    margin: 2rem 0;
+  }
+  .post-image img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+  }
+  .post-content {
+    line-height: 1.6;
+    font-size: 1.1rem;
+  }
+  .post-content p {
+    margin-bottom: 1.5rem;
+  }
+  .post-content img {
+    max-width: 100%;
+    height: auto;
+  }
+</style>
 {{ end }}
