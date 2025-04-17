@@ -1,33 +1,60 @@
-{{ $title := .Title | urlize }}
-{{ $url := .Permalink | absURL }}
 <div class="share-buttons">
-  <a href="https://twitter.com/intent/tweet?text={{ $title }}&url={{ $url }}" target="_blank" rel="noopener noreferrer">
-    Twitter
-  </a>
-  <a href="https://www.linkedin.com/shareArticle?mini=true&url={{ $url }}&title={{ $title }}" target="_blank" rel="noopener noreferrer">
-    LinkedIn
-  </a>
-  <a href="https://www.facebook.com/sharer/sharer.php?u={{ $url }}" target="_blank" rel="noopener noreferrer">
-    Facebook
-  </a>
+  <button onclick="shareOnTwitter()" aria-label="Compartir en Twitter">
+    <i class="fab fa-twitter"></i>
+  </button>
+  <button onclick="shareOnWhatsApp()" aria-label="Compartir en WhatsApp">
+    <i class="fab fa-whatsapp"></i>
+  </button>
+  <button onclick="shareOnLinkedIn()" aria-label="Compartir en LinkedIn">
+    <i class="fab fa-linkedin"></i>
+  </button>
+  <button onclick="copyLink()" aria-label="Copiar enlace">
+    <i class="fas fa-link"></i>
+  </button>
 </div>
+
+<script>
+  const pageTitle = "{{ .Title }}";
+  const pageURL = "{{ .Permalink }}";
+
+  function shareOnTwitter() {
+    window.open(`https://twitter.com/intent/tweet?text=${encodeURIComponent(pageTitle)}&url=${encodeURIComponent(pageURL)}`, '_blank');
+  }
+
+  function shareOnWhatsApp() {
+    window.open(`https://api.whatsapp.com/send?text=${encodeURIComponent(pageTitle)}%20${encodeURIComponent(pageURL)}`, '_blank');
+  }
+
+  function shareOnLinkedIn() {
+    window.open(`https://www.linkedin.com/shareArticle?mini=true&url=${encodeURIComponent(pageURL)}&title=${encodeURIComponent(pageTitle)}`, '_blank');
+  }
+
+  function copyLink() {
+    navigator.clipboard.writeText(pageURL).then(function() {
+      alert('🔗 Enlace copiado al portapapeles');
+    }, function(err) {
+      alert('❌ Error al copiar el enlace');
+    });
+  }
+</script>
 
 <style>
   .share-buttons {
+    display: flex;
+    gap: 15px;
     margin-top: 2rem;
     padding-top: 1rem;
     border-top: 1px solid #333;
   }
-  .share-buttons a {
-    display: inline-block;
-    margin-right: 1rem;
-    color: #fff;
-    text-decoration: none;
-    padding: 0.5rem 1rem;
-    background: #333;
-    border-radius: 4px;
+  .share-buttons button {
+    background: none;
+    border: none;
+    color: #F5A623;
+    font-size: 20px;
+    cursor: pointer;
+    transition: color 0.3s ease;
   }
-  .share-buttons a:hover {
-    background: #444;
+  .share-buttons button:hover {
+    color: white;
   }
-</style> 
+</style>

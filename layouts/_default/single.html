@@ -1,67 +1,60 @@
 {{ define "main" }}
-<article class="post">
-  <header class="post-header">
-    <h1 class="post-title">{{ .Title }}</h1>
-    {{ if .Params.date }}
-    <time class="post-date" datetime="{{ .Date.Format "2006-01-02" }}">
-      {{ .Date.Format "2 January 2006" }}
-    </time>
-    {{ end }}
-  </header>
 
-  {{ if .Params.image }}
-  <div class="post-image">
-    {{ $image := .Resources.GetMatch .Params.image }}
-    {{ if $image }}
-      <img src="{{ $image.RelPermalink }}" alt="{{ .Title }}" />
-    {{ else }}
-      <img src="{{ .Params.image | relURL }}" alt="{{ .Title }}" />
-    {{ end }}
-  </div>
+<div class="single-container">
+  
+  {{ with .Params.image }}
+    <img src="{{ . | relURL }}" alt="Imagen destacada" class="single-featured">
   {{ end }}
 
-  <div class="post-content">
+  <h1 class="single-title">{{ .Title }}</h1>
+
+  <div class="single-content">
     {{ .Content }}
   </div>
 
   {{ partial "share-buttons.html" . }}
-</article>
+
+</div>
 
 <style>
-  .post {
+  .single-container {
     max-width: 800px;
-    margin: 0 auto;
-    padding: 2rem;
+    margin: 40px auto;
+    padding: 0 20px;
   }
-  .post-header {
-    margin-bottom: 2rem;
-  }
-  .post-title {
-    font-size: 2.5rem;
-    margin-bottom: 0.5rem;
-  }
-  .post-date {
-    color: #888;
-    font-size: 0.9rem;
-  }
-  .post-image {
-    margin: 2rem 0;
-  }
-  .post-image img {
+
+  .single-featured {
     width: 100%;
-    height: auto;
-    border-radius: 8px;
+    max-height: 400px;
+    object-fit: cover;
+    border-radius: 12px;
+    margin-bottom: 30px;
   }
-  .post-content {
-    line-height: 1.6;
-    font-size: 1.1rem;
+
+  .single-title {
+    color: #F5A623;
+    font-size: 30px;
+    margin-bottom: 20px;
+    text-align: center;
   }
-  .post-content p {
+
+  .single-content p {
+    font-size: 17px;
+    line-height: 1.7;
+    color: #ddd;
     margin-bottom: 1.5rem;
   }
-  .post-content img {
+
+  .single-content h2 {
+    margin-top: 2rem;
+    color: #F5A623;
+  }
+
+  .single-content img {
     max-width: 100%;
-    height: auto;
+    border-radius: 10px;
+    margin: 20px 0;
   }
 </style>
+
 {{ end }}
