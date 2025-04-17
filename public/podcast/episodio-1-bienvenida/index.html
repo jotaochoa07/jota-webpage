@@ -48,95 +48,126 @@
 
   <main>
     
-<article class="post">
-  <header class="post-header">
-    <h1 class="post-title">Episodio 1 - Bienvenida</h1>
-    
-    <time class="post-date" datetime="2025-04-15">
-      15 April 2025
-    </time>
-    
-  </header>
 
+<div class="single-container">
   
+  
+    <img src="https://news.jotagrowthpartner.com/img/jota-podcast-img.jpg" alt="Imagen destacada" class="single-featured">
 
-  <div class="post-content">
+
+
+  <h1 class="single-title">Episodio 1 - Bienvenida</h1>
+
+  <div class="single-content">
     <p>Gracias por estar aquí. Este es el comienzo de un nuevo espacio para conversar.</p>
 
   </div>
 
-  
-
-<div class="share-buttons">
-  <a href="https://twitter.com/intent/tweet?text=episodio-1-bienvenida&url=https%3a%2f%2fnews.jotagrowthpartner.com%2fpodcast%2fepisodio-1-bienvenida%2f" target="_blank" rel="noopener noreferrer">
-    Twitter
-  </a>
-  <a href="https://www.linkedin.com/shareArticle?mini=true&url=https%3a%2f%2fnews.jotagrowthpartner.com%2fpodcast%2fepisodio-1-bienvenida%2f&title=episodio-1-bienvenida" target="_blank" rel="noopener noreferrer">
-    LinkedIn
-  </a>
-  <a href="https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fnews.jotagrowthpartner.com%2fpodcast%2fepisodio-1-bienvenida%2f" target="_blank" rel="noopener noreferrer">
-    Facebook
-  </a>
+  <div class="share-buttons">
+  <button onclick="shareOnTwitter()" aria-label="Compartir en Twitter">
+    <i class="fab fa-twitter"></i>
+  </button>
+  <button onclick="shareOnWhatsApp()" aria-label="Compartir en WhatsApp">
+    <i class="fab fa-whatsapp"></i>
+  </button>
+  <button onclick="shareOnLinkedIn()" aria-label="Compartir en LinkedIn">
+    <i class="fab fa-linkedin"></i>
+  </button>
+  <button onclick="copyLink()" aria-label="Copiar enlace">
+    <i class="fas fa-link"></i>
+  </button>
 </div>
+
+<script>
+  const pageTitle = "Episodio 1 - Bienvenida";
+  const pageURL = "https:\/\/news.jotagrowthpartner.com\/podcast\/episodio-1-bienvenida\/";
+
+  function shareOnTwitter() {
+    window.open(`https://twitter.com/intent/tweet?text=${encodeURIComponent(pageTitle)}&url=${encodeURIComponent(pageURL)}`, '_blank');
+  }
+
+  function shareOnWhatsApp() {
+    window.open(`https://api.whatsapp.com/send?text=${encodeURIComponent(pageTitle)}%20${encodeURIComponent(pageURL)}`, '_blank');
+  }
+
+  function shareOnLinkedIn() {
+    window.open(`https://www.linkedin.com/shareArticle?mini=true&url=${encodeURIComponent(pageURL)}&title=${encodeURIComponent(pageTitle)}`, '_blank');
+  }
+
+  function copyLink() {
+    navigator.clipboard.writeText(pageURL).then(function() {
+      alert('🔗 Enlace copiado al portapapeles');
+    }, function(err) {
+      alert('❌ Error al copiar el enlace');
+    });
+  }
+</script>
 
 <style>
   .share-buttons {
+    display: flex;
+    gap: 15px;
     margin-top: 2rem;
     padding-top: 1rem;
     border-top: 1px solid #333;
   }
-  .share-buttons a {
-    display: inline-block;
-    margin-right: 1rem;
-    color: #fff;
-    text-decoration: none;
-    padding: 0.5rem 1rem;
-    background: #333;
-    border-radius: 4px;
+  .share-buttons button {
+    background: none;
+    border: none;
+    color: #F5A623;
+    font-size: 20px;
+    cursor: pointer;
+    transition: color 0.3s ease;
   }
-  .share-buttons a:hover {
-    background: #444;
-  }
-</style> 
-</article>
-
-<style>
-  .post {
-    max-width: 800px;
-    margin: 0 auto;
-    padding: 2rem;
-  }
-  .post-header {
-    margin-bottom: 2rem;
-  }
-  .post-title {
-    font-size: 2.5rem;
-    margin-bottom: 0.5rem;
-  }
-  .post-date {
-    color: #888;
-    font-size: 0.9rem;
-  }
-  .post-image {
-    margin: 2rem 0;
-  }
-  .post-image img {
-    width: 100%;
-    height: auto;
-    border-radius: 8px;
-  }
-  .post-content {
-    line-height: 1.6;
-    font-size: 1.1rem;
-  }
-  .post-content p {
-    margin-bottom: 1.5rem;
-  }
-  .post-content img {
-    max-width: 100%;
-    height: auto;
+  .share-buttons button:hover {
+    color: white;
   }
 </style>
+
+
+</div>
+
+<style>
+  .single-container {
+    max-width: 800px;
+    margin: 40px auto;
+    padding: 0 20px;
+  }
+
+  .single-featured {
+    width: 100%;
+    max-height: 400px;
+    object-fit: cover;
+    border-radius: 12px;
+    margin-bottom: 30px;
+  }
+
+  .single-title {
+    color: #F5A623;
+    font-size: 30px;
+    margin-bottom: 20px;
+    text-align: center;
+  }
+
+  .single-content p {
+    font-size: 17px;
+    line-height: 1.7;
+    color: #ddd;
+    margin-bottom: 1.5rem;
+  }
+
+  .single-content h2 {
+    margin-top: 2rem;
+    color: #F5A623;
+  }
+
+  .single-content img {
+    max-width: 100%;
+    border-radius: 10px;
+    margin: 20px 0;
+  }
+</style>
+
 
   </main>
 
