@@ -1,10 +1,38 @@
 {{ define "main" }}
-<main>
-  <section class="px-10 py-20 text-center">
-    <h1 class="text-4xl font-bold">{{ .Title }}</h1>
-    <article class="mt-10 prose prose-lg mx-auto">
-      {{ .Content }}
-    </article>
-  </section>
-</main>
+<div class="single-container">
+  {{ with .Params.image }}
+    <img src="{{ . | relURL }}" alt="Imagen destacada" class="single-featured">
+  {{ end }}
+
+  <h1 class="single-title">{{ .Title }}</h1>
+
+  <div class="single-content">
+    {{ .Content }}
+  </div>
+
+  <div class="single-footer">
+    <a href="{{ "/" | relURL }}">← Volver al inicio</a>
+    <div class="share-buttons">
+      <button onclick="window.open('https://twitter.com/intent/tweet?text={{ .Title }}&url={{ .Permalink }}', '_blank')">
+        <i class="fab fa-twitter"></i>
+      </button>
+      <button onclick="window.open('https://api.whatsapp.com/send?text={{ .Title }} {{ .Permalink }}', '_blank')">
+        <i class="fab fa-whatsapp"></i>
+      </button>
+      <button onclick="window.open('https://www.linkedin.com/shareArticle?mini=true&url={{ .Permalink }}&title={{ .Title }}', '_blank')">
+        <i class="fab fa-linkedin"></i>
+      </button>
+      <button onclick="copiarLink()">
+        <i class="fas fa-link"></i>
+      </button>
+    </div>
+  </div>
+</div>
+
+<script>
+  function copiarLink() {
+    navigator.clipboard.writeText("{{ .Permalink }}");
+    alert("🔗 Enlace copiado al portapapeles");
+  }
+</script>
 {{ end }}

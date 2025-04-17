@@ -48,15 +48,41 @@
 
   <main>
     
-<main>
-  <section class="px-10 py-20 text-center">
-    <h1 class="text-4xl font-bold">Bienvenida a mi sitio</h1>
-    <article class="mt-10 prose prose-lg mx-auto">
-      <p>Gracias por visitar mi portafolio. Pronto encontrarás todos mis proyectos aquí.</p>
+<div class="single-container">
+  
 
-    </article>
-  </section>
-</main>
+  <h1 class="single-title">Bienvenida a mi sitio</h1>
+
+  <div class="single-content">
+    <p>Gracias por visitar mi portafolio. Pronto encontrarás todos mis proyectos aquí.</p>
+
+  </div>
+
+  <div class="single-footer">
+    <a href="https://news.jotagrowthpartner.com/">← Volver al inicio</a>
+    <div class="share-buttons">
+      <button onclick="window.open('https://twitter.com/intent/tweet?text=Bienvenida a mi sitio&url=https:\/\/news.jotagrowthpartner.com\/blog\/bienvenida-a-mi-sitio\/', '_blank')">
+        <i class="fab fa-twitter"></i>
+      </button>
+      <button onclick="window.open('https://api.whatsapp.com/send?text=Bienvenida a mi sitio https:\/\/news.jotagrowthpartner.com\/blog\/bienvenida-a-mi-sitio\/', '_blank')">
+        <i class="fab fa-whatsapp"></i>
+      </button>
+      <button onclick="window.open('https://www.linkedin.com/shareArticle?mini=true&url=https:\/\/news.jotagrowthpartner.com\/blog\/bienvenida-a-mi-sitio\/&title=Bienvenida a mi sitio', '_blank')">
+        <i class="fab fa-linkedin"></i>
+      </button>
+      <button onclick="copiarLink()">
+        <i class="fas fa-link"></i>
+      </button>
+    </div>
+  </div>
+</div>
+
+<script>
+  function copiarLink() {
+    navigator.clipboard.writeText("https:\/\/news.jotagrowthpartner.com\/blog\/bienvenida-a-mi-sitio\/");
+    alert("🔗 Enlace copiado al portapapeles");
+  }
+</script>
 
   </main>
 
