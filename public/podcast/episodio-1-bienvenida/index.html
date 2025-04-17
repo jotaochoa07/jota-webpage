@@ -35,54 +35,108 @@
 
 <body>
   <header>
-    <a href="https://news.jotagrowthpartner.com/">
-      <img src="https://news.jotagrowthpartner.com/img/logo-jota-redondo.png" alt="Logo Jota" style="height: 50px;">
-    </a>
-    <nav>
-      <a href="https://news.jotagrowthpartner.com/">Inicio</a>
-      <a href="https://news.jotagrowthpartner.com/blog/">Blog</a>
-      <a href="https://news.jotagrowthpartner.com/literatura/">Literatura</a>
-      <a href="https://news.jotagrowthpartner.com/podcast/">Podcast</a>
-    </nav>
-  </header>
+  <a href="https://news.jotagrowthpartner.com/">
+    <img src="https://news.jotagrowthpartner.com/img/logo-jota-redondo.png" alt="Logo Jota" style="height: 50px;">
+  </a>
+  <nav>
+    <a href="https://news.jotagrowthpartner.com/">Inicio</a>
+    <a href="https://news.jotagrowthpartner.com/blog/">Blog</a>
+    <a href="https://news.jotagrowthpartner.com/literatura/">Literatura</a>
+    <a href="https://news.jotagrowthpartner.com/podcast/">Podcast</a>
+  </nav>
+</header> 
 
   <main>
     
-<div class="single-container">
+<article class="post">
+  <header class="post-header">
+    <h1 class="post-title">Episodio 1 - Bienvenida</h1>
+    
+    <time class="post-date" datetime="2025-04-15">
+      15 April 2025
+    </time>
+    
+  </header>
+
   
 
-  <h1 class="single-title">Episodio 1 - Bienvenida</h1>
-
-  <div class="single-content">
+  <div class="post-content">
     <p>Gracias por estar aquí. Este es el comienzo de un nuevo espacio para conversar.</p>
 
   </div>
 
-  <div class="single-footer">
-    <a href="https://news.jotagrowthpartner.com/">← Volver al inicio</a>
-    <div class="share-buttons">
-      <button onclick="window.open('https://twitter.com/intent/tweet?text=Episodio 1 - Bienvenida&url=https:\/\/news.jotagrowthpartner.com\/podcast\/episodio-1-bienvenida\/', '_blank')">
-        <i class="fab fa-twitter"></i>
-      </button>
-      <button onclick="window.open('https://api.whatsapp.com/send?text=Episodio 1 - Bienvenida https:\/\/news.jotagrowthpartner.com\/podcast\/episodio-1-bienvenida\/', '_blank')">
-        <i class="fab fa-whatsapp"></i>
-      </button>
-      <button onclick="window.open('https://www.linkedin.com/shareArticle?mini=true&url=https:\/\/news.jotagrowthpartner.com\/podcast\/episodio-1-bienvenida\/&title=Episodio 1 - Bienvenida', '_blank')">
-        <i class="fab fa-linkedin"></i>
-      </button>
-      <button onclick="copiarLink()">
-        <i class="fas fa-link"></i>
-      </button>
-    </div>
-  </div>
+  
+
+<div class="share-buttons">
+  <a href="https://twitter.com/intent/tweet?text=episodio-1-bienvenida&url=https%3a%2f%2fnews.jotagrowthpartner.com%2fpodcast%2fepisodio-1-bienvenida%2f" target="_blank" rel="noopener noreferrer">
+    Twitter
+  </a>
+  <a href="https://www.linkedin.com/shareArticle?mini=true&url=https%3a%2f%2fnews.jotagrowthpartner.com%2fpodcast%2fepisodio-1-bienvenida%2f&title=episodio-1-bienvenida" target="_blank" rel="noopener noreferrer">
+    LinkedIn
+  </a>
+  <a href="https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fnews.jotagrowthpartner.com%2fpodcast%2fepisodio-1-bienvenida%2f" target="_blank" rel="noopener noreferrer">
+    Facebook
+  </a>
 </div>
 
-<script>
-  function copiarLink() {
-    navigator.clipboard.writeText("https:\/\/news.jotagrowthpartner.com\/podcast\/episodio-1-bienvenida\/");
-    alert("🔗 Enlace copiado al portapapeles");
+<style>
+  .share-buttons {
+    margin-top: 2rem;
+    padding-top: 1rem;
+    border-top: 1px solid #333;
   }
-</script>
+  .share-buttons a {
+    display: inline-block;
+    margin-right: 1rem;
+    color: #fff;
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+    background: #333;
+    border-radius: 4px;
+  }
+  .share-buttons a:hover {
+    background: #444;
+  }
+</style> 
+</article>
+
+<style>
+  .post {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 2rem;
+  }
+  .post-header {
+    margin-bottom: 2rem;
+  }
+  .post-title {
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
+  }
+  .post-date {
+    color: #888;
+    font-size: 0.9rem;
+  }
+  .post-image {
+    margin: 2rem 0;
+  }
+  .post-image img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+  }
+  .post-content {
+    line-height: 1.6;
+    font-size: 1.1rem;
+  }
+  .post-content p {
+    margin-bottom: 1.5rem;
+  }
+  .post-content img {
+    max-width: 100%;
+    height: auto;
+  }
+</style>
 
   </main>
 

@@ -34,17 +34,7 @@
 </head>
 
 <body>
-  <header>
-    <a href="{{ "/" | relURL }}">
-      <img src="{{ "/img/logo-jota-redondo.png" | relURL }}" alt="Logo Jota" style="height: 50px;">
-    </a>
-    <nav>
-      <a href="{{ "/" | relURL }}">Inicio</a>
-      <a href="{{ "/blog/" | relURL }}">Blog</a>
-      <a href="{{ "/literatura/" | relURL }}">Literatura</a>
-      <a href="{{ "/podcast/" | relURL }}">Podcast</a>
-    </nav>
-  </header>
+  {{ partial "header.html" . }}
 
   <main>
     {{ block "main" . }}{{ end }}
